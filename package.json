@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "npx eslint . --cache"
+    "lint": "npx eslint . --cache",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -21,7 +22,7 @@
     "@vitejs/plugin-react": "^2.1.0",
     "eslint": "^8.24.0",
     "eslint-plugin-react": "^7.31.8",
-    "husky": "^8.0.1",
+    "husky": "^8.0.0",
     "prettier": "^2.7.1",
     "typescript": "^4.6.4",
     "vite": "^3.1.0"
