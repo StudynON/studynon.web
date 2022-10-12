@@ -4,6 +4,7 @@ export const DropdownIcon = styled.img``;
 export const ItemDropDown = styled.a`
   display: block;
   text-decoration: none;
+  text-align: left;
   
   color: #474747;
   
