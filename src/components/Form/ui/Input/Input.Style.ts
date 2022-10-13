@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const InputContainer = styled.div`
+  width: 100%;
+
   margin-top: 2.5rem;
 
   display: flex;
@@ -9,7 +11,7 @@ export const InputContainer = styled.div`
 `;
 
 export const InputLabel = styled.label`
-  font-size: 20px;
+  font-size: clamp(1rem, 0.8977rem + 0.4545vw, 1.125rem);
   font-weight: 600;
   color: #474747;
 `;
@@ -17,8 +19,9 @@ export const InputLabel = styled.label`
 export const InputText = styled.input`
   font-family: "Robot", sans-serif;
 
-  width: ${(props) => props.width};
-  /* width: 100%; */
+  max-width: ${(props) => props.width};
+  min-width: 145px;
+  width: 100%;
 
   height: 35px;
 

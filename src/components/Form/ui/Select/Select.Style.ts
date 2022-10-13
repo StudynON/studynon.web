@@ -9,7 +9,7 @@ export const SelectContainer = styled.div`
 `;
 
 export const SelectLabel = styled.label`
-  font-size: 20px;
+  font-size: clamp(1rem, 0.8977rem + 0.4545vw, 1.125rem);
   font-weight: 600;
   color: #474747;
 `;

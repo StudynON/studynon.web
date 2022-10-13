@@ -4,7 +4,7 @@ import { IButton } from "./Button";
 const buttonDefaultStyle = css`
   margin-top: 80px;
 
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.8977rem + 0.4545vw, 1.125rem);
   color: #fff;
   font-weight: 600;
   text-transform: uppercase;

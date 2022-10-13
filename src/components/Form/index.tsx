@@ -1,5 +1,5 @@
 // Form Styled
-import { SForm, Container, ContainerButton } from "./style";
+import { SForm, Container, ContainerButton, ContainerDate } from "./style";
 // Components
 import Button from "./ui/Button/Button";
 import Checkbox from "./ui/Checkbox/Checkbox";
@@ -28,7 +28,11 @@ const Form = () => {
       <h1>Adicionar material de estudo</h1>
       <Select labelText="Tipo de mídia" />
       <Container>
-        <Input placeholder="Inserir link" labelTitle="Insira o link" width="412px"/>
+        <Input
+          placeholder="Inserir link"
+          labelTitle="Insira o link"
+          width="412px"
+        />
         <Input type="file" labelTitle="ou faça o upload" />
       </Container>
       <Input labelTitle="Título" placeholder="Inserir título" />
@@ -36,10 +40,10 @@ const Form = () => {
         labelTitle="Instituição de ensino"
         placeholder="Inserir Instituição"
       />
-      <Container>
-        <Input labelTitle="Data limite de acesso" type="date" width="300px" />
+      <ContainerDate>
+        <Input labelTitle="Data limite de acesso" type="date" width="145px" />
         <Checkbox />
-      </Container>
+      </ContainerDate>
       <Select labelText="Adicionar a">
         <option value="" hidden>
           Escolha a pasta
