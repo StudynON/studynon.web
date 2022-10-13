@@ -20,6 +20,7 @@ const Input = (props: IInput) => {
           placeholder={props.placeholder}
           type={props.type}
           width={props.width}
+          value={props.value}
           onChange={props.onChange}
         />
       </InputContainer>

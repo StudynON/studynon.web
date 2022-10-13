@@ -25,7 +25,10 @@ const data = [
 
 const Form = () => {
   const [values, setValues] = useState({
+    mat_link: "",
     mat_title: "",
+    mat_educ: "",
+    mat_date: "",
   });
 
   const handleSubmit = (e: FormEvent) => {
@@ -47,6 +50,8 @@ const Form = () => {
           placeholder="Inserir link"
           labelTitle="Insira o link"
           width="412px"
+          value={values.mat_link}
+          onChange={handleChange}
         />
       </Container>
       <Input
@@ -60,6 +65,8 @@ const Form = () => {
         name="mat_educ"
         labelTitle="Instituição de ensino"
         placeholder="Inserir Instituição"
+        value={values.mat_educ}
+        onChange={handleChange}
       />
       <ContainerDate>
         <Input
@@ -67,6 +74,9 @@ const Form = () => {
           labelTitle="Data limite de acesso"
           type="date"
           width="145px"
+          value={values.mat_date}
+          onChange={handleChange}
+
         />
         <Checkbox />
       </ContainerDate>
