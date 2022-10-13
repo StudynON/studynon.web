@@ -1,4 +1,5 @@
 // Form Styled
+import { ChangeEvent, FormEvent, useState } from "react";
 import { SForm, Container, ContainerButton, ContainerDate } from "./style";
 // Components
 import Button from "./ui/Button/Button";
@@ -23,25 +24,50 @@ const data = [
 ];
 
 const Form = () => {
+  const [values, setValues] = useState({
+    mat_title: "",
+  });
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    console.log(values);
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
   return (
-    <SForm>
+    <SForm onSubmit={handleSubmit}>
       <h1>Adicionar material de estudo</h1>
       <Select labelText="Tipo de mídia" />
       <Container>
         <Input
+          name="mat_link"
           placeholder="Inserir link"
           labelTitle="Insira o link"
           width="412px"
         />
-        <Input type="file" labelTitle="ou faça o upload" />
       </Container>
-      <Input labelTitle="Título" placeholder="Inserir título" />
       <Input
+        name="mat_title"
+        labelTitle="Título"
+        placeholder="Inserir título"
+        value={values.mat_title}
+        onChange={handleChange}
+      />
+      <Input
+        name="mat_educ"
         labelTitle="Instituição de ensino"
         placeholder="Inserir Instituição"
       />
       <ContainerDate>
-        <Input labelTitle="Data limite de acesso" type="date" width="145px" />
+        <Input
+          name="mat_date"
+          labelTitle="Data limite de acesso"
+          type="date"
+          width="145px"
+        />
         <Checkbox />
       </ContainerDate>
       <Select labelText="Adicionar a">

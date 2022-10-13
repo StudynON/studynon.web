@@ -1,10 +1,13 @@
 import { InputContainer, InputLabel, InputText } from "./Input.Style";
 
 interface IInput {
-  width?: string;
+  name: string;
   labelTitle: string;
   placeholder?: string;
   type?: string;
+  width?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = (props: IInput) => {
@@ -13,9 +16,11 @@ const Input = (props: IInput) => {
       <InputContainer>
         <InputLabel>{props.labelTitle}</InputLabel>
         <InputText
+          name={props.name}
           placeholder={props.placeholder}
           type={props.type}
           width={props.width}
+          onChange={props.onChange}
         />
       </InputContainer>
     </>
