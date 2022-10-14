@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const ResetCss = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -51,4 +51,5 @@ table {
 }
 
 `;
-export default ResetCss;
+
+export default GlobalStyles;

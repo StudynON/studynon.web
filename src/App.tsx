@@ -1,12 +1,18 @@
-import React from "react";
+import  Router  from "./routes";
+import  GlobalStyle  from "./styles/GlobalStyles";
+import { ThemeProvider } from "styled-components";
+import { ligthTheme } from "./styles/theme";
 
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>owlrange notes</h1>
-    </div>
+    <>
+      <ThemeProvider theme={ligthTheme}>
+        <GlobalStyle />
+        <Router />
+      </ThemeProvider>
+    </>
   );
 };
 
-export default App;
+export default App ;
