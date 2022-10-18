@@ -8,24 +8,31 @@ import {
   ItemDropDown,
 } from "./styled";
 
-type Props = {
+interface SelectCustomProps {
   data: string[];
   value: string;
   onChangeValue: (value: string) => void;
-};
+}
 
-function SelectCustom({ data, value, onChangeValue }: Props) {
+function SelectCustom({ data, value, onChangeValue }: SelectCustomProps) {
   return (
     <DropdownButton>
       <ButtonText>{value ? value : "STATUS"}</ButtonText>
       <img src={DropIcon} />
 
       <DropdownList>
-        {data.map((item) => (
-          <ItemDropDown key={item} onClick={() => onChangeValue(item)}>
-            {item}
-          </ItemDropDown>
-        ))}
+        {data.map((item) => {
+          return (
+            <ItemDropDown
+              key={item}
+              onClick={function () {
+                onChangeValue(item);
+              }}
+            >
+              {item}
+            </ItemDropDown>
+          );
+        })}
       </DropdownList>
     </DropdownButton>
   );
