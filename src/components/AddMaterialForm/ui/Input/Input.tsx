@@ -7,6 +7,7 @@ interface IInputProps {
   labelText?: string;
   isDateVariant?: boolean;
   disabled?: boolean;
+  required?: boolean;
 }
 
 const Input = (props: IInputProps) => {

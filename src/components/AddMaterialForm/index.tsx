@@ -10,11 +10,13 @@ import Input from "./ui/Input/Input";
 import Select from "./ui/Select/Select";
 
 const FormAddMaterial = () => {
+  // Primeiro select com o tipo de material cadastrado
   const optionMidia = [
     { id: 1, value: "videoAula", text: "Vídeo Aula" },
     { id: 2, value: "link", text: "Link" },
     { id: 3, value: "arquivo", text: "Arquivo" },
   ];
+  // Mock data para as pastas
   const optionPastas = [
     { id: 1, value: "direitoAdm", text: "Direito Administrativo" },
     { id: 2, value: "direitoConst", text: "Direito Constitucional" },
@@ -22,6 +24,10 @@ const FormAddMaterial = () => {
   ];
 
   const [isChecked, setIsChecked] = useState<boolean>(false);
+
+  const handleCheckbox = () => {
+    setIsChecked((prev) => !prev);
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -43,7 +49,7 @@ const FormAddMaterial = () => {
 
   return (
     <SForm onSubmit={handleSubmit}>
-      <Select name="midia" labelText="Tipo de mídia">
+      <Select name="midia" labelText="Tipo de mídia" required>
         <option value="" hidden>
           Tipo de Mídia
         </option>
@@ -58,12 +64,14 @@ const FormAddMaterial = () => {
         name="link"
         labelText="Insira o link"
         placeholder="Inserir link "
+        required
       />
       <Input
         type="text"
         name="titulo"
         labelText="Título"
         placeholder="Inserir título"
+        required
       />
       <SDateContainer>
         <Input
@@ -71,10 +79,11 @@ const FormAddMaterial = () => {
           name="dataAcesso"
           labelText="Data limite de acesso"
           disabled={isChecked}
+          required
         />
-        <Checkbox onChange={() => setIsChecked((prev) => !prev)} />
+        <Checkbox onChange={handleCheckbox} />
       </SDateContainer>
-      <Select name="pastas" labelText="Adicionar a">
+      <Select name="pastas" labelText="Adicionar a" required>
         <option value="" hidden>
           Escolha uma pasta
         </option>

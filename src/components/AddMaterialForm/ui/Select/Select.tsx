@@ -5,6 +5,7 @@ interface ISelectProps {
   name: string;
   labelText: string;
   children: ReactNode[];
+  required?: boolean;
 }
 
 const Select = (props: ISelectProps) => {
