@@ -32,7 +32,6 @@ const FormAddMaterial = () => {
   };
 
   const handleCancel = () => {
-    console.log("cancelar");
     formRef?.current?.reset();
   };
 
