@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useRef } from "react";
 
 // Styles
 import { SForm, SDateContainer, SBtnContainer } from "./style";
@@ -16,13 +16,14 @@ const FormAddMaterial = () => {
     { id: 1, value: "videoAula", text: "Vídeo Aula" },
     { id: 2, value: "link", text: "Link" },
   ];
-
   // Mock data para as pastas
   const optCategories = [
     { id: 1, value: "direitoAdm", text: "Direito Administrativo" },
     { id: 2, value: "direitoConst", text: "Direito Constitucional" },
     { id: 3, value: "legislacao", text: "Legislação" },
   ];
+
+  const formRef = useRef<HTMLFormElement>(null);
 
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
@@ -32,6 +33,7 @@ const FormAddMaterial = () => {
 
   const handleCancel = () => {
     console.log("cancelar");
+    formRef?.current?.reset();
   };
 
   const handleSubmit = (e: FormEvent) => {
@@ -70,10 +72,11 @@ const FormAddMaterial = () => {
         category: ${data.category}
         lifetime_access: ${isChecked}
     `);
+    formRef?.current?.reset();
   };
 
   return (
-    <SForm onSubmit={handleSubmit}>
+    <SForm ref={formRef} onSubmit={handleSubmit}>
       <Select name="media" labelText="Tipo de mídia" required>
         <option value="" hidden>
           Tipo de Mídia
