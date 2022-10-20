@@ -4,12 +4,15 @@ import { StyledButon } from "./Button.Style";
 export interface IButton {
   children: ReactNode;
   isCancelVariant: boolean;
+  onClick?: () => void;
 }
 
-const Button = ({ children, isCancelVariant }: IButton) => {
+const Button = ({ children, isCancelVariant, onClick }: IButton) => {
   return (
     <>
-      <StyledButon isCancelVariant={isCancelVariant}>{children}</StyledButon>
+      <StyledButon isCancelVariant={isCancelVariant} onClick={onClick}>
+        {children}
+      </StyledButon>
     </>
   );
 };

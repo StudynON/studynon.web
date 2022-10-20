@@ -1,3 +1,4 @@
+import axios from "axios";
 import { FormEvent, useState } from "react";
 
 // Styles
@@ -11,13 +12,13 @@ import Select from "./ui/Select/Select";
 
 const FormAddMaterial = () => {
   // Primeiro select com o tipo de material cadastrado
-  const optionMidia = [
+  const optionMedia = [
     { id: 1, value: "videoAula", text: "Vídeo Aula" },
     { id: 2, value: "link", text: "Link" },
-    { id: 3, value: "arquivo", text: "Arquivo" },
   ];
+
   // Mock data para as pastas
-  const optionPastas = [
+  const optCategories = [
     { id: 1, value: "direitoAdm", text: "Direito Administrativo" },
     { id: 2, value: "direitoConst", text: "Direito Constitucional" },
     { id: 3, value: "legislacao", text: "Legislação" },
@@ -29,31 +30,55 @@ const FormAddMaterial = () => {
     setIsChecked((prev) => !prev);
   };
 
+  const handleCancel = () => {
+    console.log("cancelar");
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+
     const formData = new FormData(e.target as HTMLFormElement);
     const data = Object.fromEntries(formData);
 
-    console.log(`
-      Midia ${data.midia},
-      Link ${data.link},
-      Titulo ${data.titulo},
-      Escola ${data.escola},
-      Data Acesso ${data.dataAcesso},
-      Pastas ${data.pastas},
-      Acesso Vitalício ${isChecked}
-      `);
+    if (!data.title) {
+      return;
+    }
+    // Método post, deixarei comentado
+    // substituir API pelo endpoint correto qdo estiver disponível
+    // try {
+    //   axios.post('API',{
+    //     media: ${data.media},
+    //     Link: ${data.link},
+    //     title: ${data.title},
+    //     school: ${data.school},
+    //     deadline: ${data.deadline},
+    //     category: ${data.category},
+    //     lifetime_access: ${isChecked}
+    //   })
+    //   alert('Material adicionado com sucesso')
+    // } catch (error) {
+    //   alert(`Erro ao adicionar material - ${error}`)
+    // }
 
-    console.log(data);
+    console.log(`
+      Dados do formulário:
+        media: ${data.media}
+        Link: ${data.link}
+        title: ${data.title}
+        school: ${data.school}
+        deadline: ${data.deadline}
+        category: ${data.category}
+        lifetime_access: ${isChecked}
+    `);
   };
 
   return (
     <SForm onSubmit={handleSubmit}>
-      <Select name="midia" labelText="Tipo de mídia" required>
+      <Select name="media" labelText="Tipo de mídia" required>
         <option value="" hidden>
           Tipo de Mídia
         </option>
-        {optionMidia.map((opt) => (
+        {optionMedia.map((opt) => (
           <option key={opt.id} value={opt.value}>
             {opt.text}
           </option>
@@ -68,34 +93,43 @@ const FormAddMaterial = () => {
       />
       <Input
         type="text"
-        name="titulo"
+        name="title"
         labelText="Título"
         placeholder="Inserir título"
+        required
+      />
+      <Input
+        type="text"
+        name="school"
+        labelText="Instituição de ensino"
+        placeholder="Inserir instituição"
         required
       />
       <SDateContainer>
         <Input
           type="date"
-          name="dataAcesso"
+          name="deadline"
           labelText="Data limite de acesso"
           disabled={isChecked}
           required
         />
         <Checkbox onChange={handleCheckbox} />
       </SDateContainer>
-      <Select name="pastas" labelText="Adicionar a" required>
+      <Select name="category" labelText="Adicionar a" required>
         <option value="" hidden>
           Escolha uma pasta
         </option>
-        {optionPastas.map((opt) => (
-          <option key={opt.id} value={opt.value}>
-            {opt.text}
+        {optCategories.map((category) => (
+          <option key={category.id} value={category.value}>
+            {category.text}
           </option>
         ))}
       </Select>
       <SBtnContainer>
         <Button isCancelVariant={false}>Concluído</Button>
-        <Button isCancelVariant={true}>Cancelar</Button>
+        <Button isCancelVariant={true} onClick={handleCancel}>
+          Cancelar
+        </Button>
       </SBtnContainer>
     </SForm>
   );
