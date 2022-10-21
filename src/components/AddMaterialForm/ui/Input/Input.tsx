@@ -1,4 +1,4 @@
-import { SInputContainer, SLabel, SInput, SErrMsg } from "./Input.Style";
+import { SInputContainer, SLabel, SInput } from "./Input.Style";
 
 interface IInputProps {
   type: string;

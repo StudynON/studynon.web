@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { SSelectContainer, SSelect, SLabel, SErrMsg } from "./Select.Style";
+import { SSelectContainer, SSelect, SLabel } from "./Select.Style";
 
 interface ISelectProps {
   name: string;
