@@ -49,7 +49,7 @@ const FormAddMaterial = () => {
     // try {
     //   axios.post('API',{
     //     media: ${data.media},
-    //     Link: ${data.link},
+    //     link: ${data.link},
     //     title: ${data.title},
     //     school: ${data.school},
     //     deadline: ${data.deadline},
