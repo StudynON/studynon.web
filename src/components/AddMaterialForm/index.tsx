@@ -1,10 +1,8 @@
 import axios from "axios";
 import { FormEvent, useState, useRef } from "react";
 
-// Styles
 import { SForm, SDateContainer, SBtnContainer } from "./style";
 
-// Components
 import Button from "./ui/Button/Button";
 import Checkbox from "./ui/Checkbox/Checkbox";
 import Input from "./ui/Input/Input";
