@@ -15,7 +15,6 @@ const Input = (props: IInputProps) => {
     <SInputContainer>
       <SLabel>{props.labelText}</SLabel>
       <SInput {...props} />
-      <SErrMsg>Mensagem de erro</SErrMsg>
     </SInputContainer>
   );
 };

@@ -33,17 +33,6 @@ const defaultInput = css`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 `;
 
-// const dateInput = css`
-//   ${defaultInput}
-//   width: 145px;
-// `;
-
 export const SInput = styled.input`
   ${defaultInput}
-`;
-
-export const SErrMsg = styled.span`
-  font-weight: 600;
-  color: crimson;
-  display: none;
 `;

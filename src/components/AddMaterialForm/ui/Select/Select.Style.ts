@@ -41,9 +41,3 @@ export const SLabel = styled.label`
   font-size: clamp(1rem, 0.8977rem + 0.4545vw, 1.125rem);
   font-weight: 600;
 `;
-
-export const SErrMsg = styled.span`
-  font-weight: 600;
-  color: crimson;
-  display: none;
-`;

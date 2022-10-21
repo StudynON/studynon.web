@@ -13,7 +13,6 @@ const Select = (props: ISelectProps) => {
     <SSelectContainer>
       <SLabel>{props.labelText}</SLabel>
       <SSelect {...props}>{props.children}</SSelect>
-      <SErrMsg>Mensagem de Erro</SErrMsg>
     </SSelectContainer>
   );
 };
