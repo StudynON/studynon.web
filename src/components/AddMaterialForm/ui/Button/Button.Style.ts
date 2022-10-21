@@ -35,5 +35,5 @@ const cancelButton = css`
 
 export const StyledButon = styled.button<IButton>`
   ${buttonDefaultStyle};
-  ${(props: { isCancelVariant: any }) => props.isCancelVariant && cancelButton}
+  ${({ isCancelVariant }: IButton) => isCancelVariant && cancelButton}
 `;
