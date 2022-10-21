@@ -13,7 +13,7 @@ const Container = styled.div``;
  * theme: { breakpoints, text, background, white, light, dark, gray, blue, orange}
  */
 const Text = styled.h1`
-  color: ${({ theme }: IProps) => theme.dark};
+  color: ${({ theme }: IProps) => theme.text};
 `;
 
 export { Container, Text };
