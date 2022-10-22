@@ -1,9 +1,9 @@
-import { Container , Text} from "./style";
+import { Container, Text } from "./style";
 
 const Home = () => {
   return (
     <Container className="App">
-      <Text>owlrange notes</Text>
+      <Text>owlarange notes</Text>
     </Container>
   );
 };
