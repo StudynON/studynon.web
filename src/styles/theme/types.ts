@@ -6,7 +6,7 @@ export type IBreakpoints = {
     large: string;
     extraLarge: string;
     big: string;
-  }
+  };
 };
 
 export type IDefaultThemeProps = {
