@@ -1,6 +1,6 @@
 <h1> Owlrangenotes Front-end </h1>
 <p align="center">
-<img src= "https://img.shields.io/badge/STTATUS-EM%20%20ANDAMENTO-blue" />
+<img src= "https://img.shields.io/badge/STATUS-EM%20%20ANDAMENTO-blue" />
 </p>
 
 ## Sobre nosso Projeto
