@@ -13,12 +13,10 @@ Todos nós já passamos pelo problema de ter muito material de estudo e não con
 
 Com esse aplicativo, esse problema acaba. :heart_eyes:
 
-## Stack Utilizada
-TypeScript;
-<br>
-HTML;
-<br>
-Shell.
+## Stacks Utilizadas
+- TypeScript;
+- HTML;
+- Shell.
 
 ## Dúvidas
 Para dúvidas sobre o projeto Front-End, ou para o projeto em geral, por gentileza verifique primeiramente se sua dúvida consegue ser sanada no canal de [status-projetos](https://discord.com/channels/847518545156112424/1031925706524999780) do servidor da Orange Juice no Discord.
