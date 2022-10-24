@@ -17,6 +17,7 @@ const globalColors: IDefaultThemeProps = {
   dark: "#161515",
   gray: "#747474",
   blue: "#040EFF",
+  darkBlue: "#0007AE",
   orange: "#FF6B00",
 };
 
