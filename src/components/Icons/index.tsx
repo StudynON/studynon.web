@@ -1,6 +1,7 @@
 export * from "./LogoIcon";
 export * from "./StudentIcon";
 export * from "./CalendarIcon";
+export * from "./CheckIcon";
 export * from "./BookIcon";
 export * from "./PersonIcon";
 export * from "./SettingsIcon";
