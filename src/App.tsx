@@ -1,8 +1,7 @@
-import  Router  from "./routes";
-import  GlobalStyle  from "./styles/GlobalStyles";
+import Router from "./routes";
+import GlobalStyle from "./styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import { ligthTheme } from "./styles/theme";
-
 
 const App = () => {
   return (
@@ -15,4 +14,4 @@ const App = () => {
   );
 };
 
-export default App ;
+export default App;

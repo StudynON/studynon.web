@@ -8,7 +8,7 @@ const breakpoints: IBreakpoints = {
     large: "998px",
     extraLarge: "1200px",
     big: "1400px",
-  }
+  },
 };
 
 const globalColors: IDefaultThemeProps = {
