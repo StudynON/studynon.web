@@ -4,8 +4,8 @@ import {
   ModalOverlay,
   ModalContainer,
   ButtonContainer,
-  ButtonAddNew,
-  ButtonReturn,
+  LinkAddNew,
+  LinkReturn,
 } from "./Modal.Style";
 
 interface IModal {
@@ -14,7 +14,8 @@ interface IModal {
   btnAddText: string;
   btnReturnText: string;
   active: boolean;
-  hideModal: () => void;
+  linkToAddNew: string;
+  linkToReturn: string;
 }
 
 const Modal = ({
@@ -23,7 +24,8 @@ const Modal = ({
   subTitle,
   btnAddText,
   btnReturnText,
-  hideModal,
+  linkToAddNew,
+  linkToReturn,
 }: IModal) => {
   
   /*
@@ -33,22 +35,18 @@ const Modal = ({
    *  para abrir basta trocar o estado para true
    */
 
-  const handleHideModal = () => {
-    hideModal();
-  };
-
   return (
     <>
       {active && (
         <ModalBlock>
-          <ModalOverlay onClick={handleHideModal} />
+          <ModalOverlay/>
           <ModalContainer>
             <CheckIcon stroke="#00ff00" size="5rem" />
             <h1>{title}</h1>
             <p>{subTitle}</p>
             <ButtonContainer>
-              <ButtonAddNew href="">{btnAddText}</ButtonAddNew>
-              <ButtonReturn href="">{btnReturnText}</ButtonReturn>
+              <LinkAddNew to={linkToAddNew}>{btnAddText}</LinkAddNew>
+              <LinkReturn to={linkToReturn}>{btnReturnText}</LinkReturn>
             </ButtonContainer>
           </ModalContainer>
         </ModalBlock>

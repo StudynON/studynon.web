@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
+import { Link } from "react-router-dom";
 
 const scaleIn = keyframes`
 0%{
@@ -78,7 +79,7 @@ const ButtonContainer = styled.div`
   gap: 2rem;
 `;
 
-const ButtonDefaultStyle = css`
+const LinkDefaultStyle = css`
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
@@ -90,8 +91,8 @@ const ButtonDefaultStyle = css`
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
 `;
 
-const ButtonAddNew = styled.a`
-  ${ButtonDefaultStyle}
+const LinkAddNew = styled(Link)`
+  ${LinkDefaultStyle}
   color: ${(props) => props.theme.white};
 
   background-color: ${(props) => props.theme.darkBlue};
@@ -102,8 +103,8 @@ const ButtonAddNew = styled.a`
   }
 `;
 
-const ButtonReturn = styled.a`
-  ${ButtonDefaultStyle}
+const LinkReturn = styled(Link)`
+  ${LinkDefaultStyle}
 
   color: ${(props) => props.theme.darkBlue};
 
@@ -120,6 +121,6 @@ export {
   ModalOverlay,
   ModalContainer,
   ButtonContainer,
-  ButtonAddNew,
-  ButtonReturn,
+  LinkAddNew,
+  LinkReturn,
 };
