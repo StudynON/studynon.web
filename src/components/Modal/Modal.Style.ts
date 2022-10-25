@@ -1,6 +1,38 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const scaleIn = keyframes`
+0%{
+  transform:scale(0)
+}
+100%{transform:scale(1)}
+`;
+
+const ModalBlock = styled.div`
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  overflow: hidden;
+
+  padding: 0.5rem;
+
+  opacity: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ModalOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background-color: rgba(248, 248, 248, 0.75);
+
+  display: block;
+`;
 
 const ModalContainer = styled.div`
+  z-index: 1;
+
   max-width: 48rem;
   min-width: 18rem;
   width: 100%;
@@ -34,6 +66,8 @@ const ModalContainer = styled.div`
 
     margin-top: 1.375rem;
   }
+
+  animation: ${scaleIn} 0.2s ease 0s 1 normal forwards;
 `;
 
 const ButtonContainer = styled.div`
@@ -54,7 +88,6 @@ const ButtonDefaultStyle = css`
   border-radius: 0.5rem;
 
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
-
 `;
 
 const ButtonAddNew = styled.a`
@@ -82,4 +115,11 @@ const ButtonReturn = styled.a`
   }
 `;
 
-export { ModalContainer, ButtonContainer, ButtonAddNew, ButtonReturn };
+export {
+  ModalBlock,
+  ModalOverlay,
+  ModalContainer,
+  ButtonContainer,
+  ButtonAddNew,
+  ButtonReturn,
+};

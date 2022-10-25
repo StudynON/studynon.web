@@ -1,5 +1,7 @@
 import { CheckIcon } from "../Icons";
 import {
+  ModalBlock,
+  ModalOverlay,
   ModalContainer,
   ButtonContainer,
   ButtonAddNew,
@@ -7,23 +9,51 @@ import {
 } from "./Modal.Style";
 
 interface IModal {
-  modalTitle: string;
-  modalSubTitle: string;
-  modalBtnAddText: string;
-  modalBtnReturnText: string;
+  title: string;
+  subTitle: string;
+  btnAddText: string;
+  btnReturnText: string;
+  active: boolean;
+  hideModal: () => void;
 }
 
-const Modal = (props: IModal) => {
+const Modal = ({
+  active,
+  title,
+  subTitle,
+  btnAddText,
+  btnReturnText,
+  hideModal,
+}: IModal) => {
+  
+  /*
+   *  Como usar o modal:
+   *  Adicionar um estado 'active' no componente pai
+   *  com valor padrão false, assim mantém o modal fechado
+   *  para abrir basta trocar o estado para true
+   */
+
+  const handleHideModal = () => {
+    hideModal();
+  };
+
   return (
-    <ModalContainer>
-      <CheckIcon color="#161515" size="3.8rem" />
-      <h1>{props.modalTitle}</h1>
-      <p>{props.modalSubTitle}</p>
-      <ButtonContainer>
-        <ButtonAddNew href="">{props.modalBtnAddText}</ButtonAddNew>
-        <ButtonReturn href="">{props.modalBtnReturnText}</ButtonReturn>
-      </ButtonContainer>
-    </ModalContainer>
+    <>
+      {active && (
+        <ModalBlock>
+          <ModalOverlay onClick={handleHideModal} />
+          <ModalContainer>
+            <CheckIcon stroke="#00ff00" size="5rem" />
+            <h1>{title}</h1>
+            <p>{subTitle}</p>
+            <ButtonContainer>
+              <ButtonAddNew href="">{btnAddText}</ButtonAddNew>
+              <ButtonReturn href="">{btnReturnText}</ButtonReturn>
+            </ButtonContainer>
+          </ModalContainer>
+        </ModalBlock>
+      )}
+    </>
   );
 };
 
