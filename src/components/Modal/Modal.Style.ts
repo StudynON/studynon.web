@@ -52,7 +52,7 @@ const ModalContainer = styled.div`
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
 
   h1 {
-    font-size: 2.125rem;
+    font-size: clamp(1.5rem, 1.125rem + 2.0833vw, 2.125rem);
     font-weight: 600;
     color: ${(props) => props.theme.dark};
     text-transform: uppercase;
@@ -61,7 +61,7 @@ const ModalContainer = styled.div`
   }
 
   p {
-    font-size: 24px;
+    font-size: clamp(1.125rem, 0.9000rem + 1.2500vw, 1.5rem);
     font-weight: 500;
     color: ${(props) => props.theme.gray};
 
@@ -72,7 +72,9 @@ const ModalContainer = styled.div`
 `;
 
 const ButtonContainer = styled.div`
-  margin-top: 3.125rem;
+  margin-top: 2.625rem;
+
+  padding: 0.5rem;
 
   display: flex;
   justify-content: center;
@@ -80,6 +82,7 @@ const ButtonContainer = styled.div`
 `;
 
 const LinkDefaultStyle = css`
+  font-size: clamp(0.875rem, 0.8000rem + 0.4167vw, 1rem);
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
