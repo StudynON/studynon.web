@@ -9,7 +9,7 @@ export const SLabel = styled.label`
   gap: 0.5rem;
 `;
 
-export const SChekbox = styled.input`
+export const SCheckbox = styled.input`
   width: 1.5rem;
   aspect-ratio: 1;
 

@@ -1,4 +1,4 @@
-import { SLabel, SChekbox } from "./Checkbox.Style";
+import { SLabel, SCheckbox } from "./Checkbox.Style";
 
 interface ICheckbox {
   onChange: () => void;
@@ -7,7 +7,7 @@ interface ICheckbox {
 const Checkbox = (props: ICheckbox) => {
   return (
     <SLabel>
-      <SChekbox type={"checkbox"} {...props} />
+      <SCheckbox type={"checkbox"} {...props} />
       Acesso vitalício
     </SLabel>
   );
