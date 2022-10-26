@@ -15,6 +15,7 @@ export type IDefaultThemeProps = {
   dark: string;
   gray: string;
   blue: string;
+  darkBlue: string;
   orange: string;
 };
 
