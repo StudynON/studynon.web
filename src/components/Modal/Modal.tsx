@@ -27,13 +27,6 @@ const Modal = ({
   linkToAddNew,
   linkToReturn,
 }: IModal) => {
-  
-  /*
-   *  Como usar o modal:
-   *  Adicionar um estado 'active' no componente pai
-   *  com valor padrão false, assim mantém o modal fechado
-   *  para abrir basta trocar o estado para true
-   */
 
   return (
     <>
