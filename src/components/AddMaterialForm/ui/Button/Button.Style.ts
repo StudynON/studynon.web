@@ -33,7 +33,7 @@ const cancelButton = css`
   }
 `;
 
-export const StyledButon = styled.button<IButton>`
+export const StyledButton = styled.button<IButton>`
   ${buttonDefaultStyle};
   ${({ isCancelVariant }: IButton) => isCancelVariant && cancelButton}
 `;

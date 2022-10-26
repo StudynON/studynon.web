@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { StyledButon } from "./Button.Style";
+import { StyledButton } from "./Button.Style";
 
 export interface IButton {
   children: ReactNode;
@@ -10,9 +10,9 @@ export interface IButton {
 const Button = ({ children, isCancelVariant, onClick }: IButton) => {
   return (
     <>
-      <StyledButon isCancelVariant={isCancelVariant} onClick={onClick}>
+      <StyledButton isCancelVariant={isCancelVariant} onClick={onClick}>
         {children}
-      </StyledButon>
+      </StyledButton>
     </>
   );
 };
