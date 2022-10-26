@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
    License: none (public domain)
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap');
 
 
 html, body, div, span, applet, object, iframe,
