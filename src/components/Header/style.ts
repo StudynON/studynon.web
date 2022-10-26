@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { IThemeProps } from "../../styles/theme";
 
-interface IButtonProps {
+interface IHeaderProps {
   theme: IThemeProps;
 }
 
@@ -17,7 +17,7 @@ const Container = styled.header`
 
 const FixedHeader = styled.div`
   position: fixed;
-  background-color: ${({ theme }: IButtonProps) => theme.white};
+  background-color: ${({ theme }: IHeaderProps) => theme.white};
   box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 10%);
   width: 100%;
   padding: 10px 20px;

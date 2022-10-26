@@ -1,12 +1,20 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Header";
-import { Container } from "./style";
+import Sidebar from "../Sidebar";
+import { Container, ContentSection, Main } from "./style";
 
 const PrivateContainer = () => {
   return (
     <Container>
       <Header />
-      <Outlet />
+
+      <ContentSection>
+        <Sidebar />
+
+        <Main>
+          <Outlet />
+        </Main>
+      </ContentSection>
     </Container>
   );
 };
