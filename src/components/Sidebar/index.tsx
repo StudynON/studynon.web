@@ -1,11 +1,13 @@
-import { Container } from "./style";
+import { Container, FixedContainer } from "./style";
 import { UserInfos, NavLinks } from "./components";
 
 const Sidebar = () => {
   return (
     <Container>
-      <UserInfos name="Parlandim" />
-      <NavLinks />
+      <FixedContainer>
+        <UserInfos name="Parlandim" />
+        <NavLinks />
+      </FixedContainer>
     </Container>
   );
 };

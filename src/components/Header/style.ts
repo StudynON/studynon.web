@@ -13,6 +13,7 @@ const HeaderHeight = css`
 
 const Container = styled.header`
   ${HeaderHeight}
+  width: 100%;
 `;
 
 const FixedHeader = styled.div`
