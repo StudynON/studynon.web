@@ -1,5 +1,6 @@
 import { LogoWithText } from "../Icons";
-import { Container, Logo, FixedHeader, HamburgerButton } from "./style";
+import { Container, Logo, FixedHeader } from "./style";
+import { HamburgerButton } from "./components";
 
 interface IHeader {
   openMenuMobile: React.MouseEventHandler<HTMLButtonElement>;
@@ -13,14 +14,7 @@ const Header = ({ openMenuMobile }: IHeader) => {
           <LogoWithText color="#040EFF" />
         </Logo>
 
-        <HamburgerButton
-          type="button"
-          title="abrir menu"
-          name="button menu"
-          onClick={openMenuMobile}
-        >
-          <div></div>
-        </HamburgerButton>
+        <HamburgerButton onClick={openMenuMobile} />
       </FixedHeader>
     </Container>
   );

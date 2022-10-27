@@ -38,38 +38,4 @@ const Logo = styled(Link)`
   }
 `;
 
-const buttonLine = css`
-  position: absolute;
-  content: "";
-  width: 30px;
-  height: 4px;
-  border-radius: 2px;
-  background-color: ${({ theme }: IHeaderProps) => theme.darkKettle};
-  left: 0;
-`;
-
-const HamburgerButton = styled.button`
-  width: 30px;
-  height: 30px;
-  position: relative;
-  border: none;
-  background-color: transparent;
-
-  & div {
-    ${buttonLine};
-    top: 50%;
-    transform: translatey(-50%);
-  }
-
-  &::before {
-    ${buttonLine}
-    top: 0;
-  }
-
-  &::after {
-    ${buttonLine};
-    bottom: 0;
-  }
-`;
-
-export { Logo, FixedHeader, Container, HamburgerButton };
+export { Logo, FixedHeader, Container };

@@ -21,7 +21,7 @@ const PrivateContainer = () => {
       <Header openMenuMobile={toggleToActive} />
 
       <ContentSection>
-        {/* <Sidebar /> */}
+        <Sidebar />
         <SidebarMobile
           isActive={menuIsActive}
           closeMenuMobile={toggleToDisabled}

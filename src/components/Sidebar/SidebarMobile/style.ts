@@ -25,6 +25,10 @@ const Container = styled.nav`
     width: 100%;
     right: 0;
   }
+
+  @media (min-width: 720px) {
+    display: none;
+  }
 `;
 
 const line = css`

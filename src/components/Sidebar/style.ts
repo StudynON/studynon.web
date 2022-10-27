@@ -9,6 +9,10 @@ const ContainerWidthAndHeight = css`
   max-width: 261px;
   width: 100%;
   height: calc(100vh - 73px);
+
+  @media (max-width: 720px) {
+    display: none;
+  }
 `;
 
 const Container = styled.section`
