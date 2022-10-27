@@ -18,7 +18,7 @@ const transition = css`
 const ListItem = styled.li`
   margin: 20px 0;
   padding: 7px;
-  border-radius: 3px;
+  border-radius: 8px;
   cursor: pointer;
 
   ${transition}
@@ -43,11 +43,16 @@ const CustomLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   color: ${({ theme }: ILinkProps) => theme.darkKettle};
+  flex-wrap: nowrap;
 
   & span {
     font-weight: 500;
     margin-left: 10px;
     font-size: 1.09rem;
+
+    @media (max-width: 600px) {
+      white-space: nowrap;
+    }
   }
 `;
 
