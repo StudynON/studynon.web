@@ -1,12 +1,8 @@
 import React from "react";
 
 import { SelectArrowDownIcon } from "../Icons/SelectArrowDownIcon";
-import {
-  ButtonText,
-  DropdownButton,
-  DropdownList,
-  ItemDropDown,
-} from "./style";
+import ItemDropDown from "./components/ItemDropDown";
+import { ButtonText, DropdownButton, DropdownList } from "./style";
 
 interface SelectCustomProps {
   data: string[];
@@ -27,18 +23,9 @@ function SelectStatus({
       <SelectArrowDownIcon size="0.8em" color={accentColor || "#0007AE"} />
 
       <DropdownList>
-        {data.map((item) => {
-          return (
-            <ItemDropDown
-              key={item}
-              onClick={function () {
-                onChangeValue(item);
-              }}
-            >
-              {item}
-            </ItemDropDown>
-          );
-        })}
+        {data.map((item) => (
+          <ItemDropDown key={item} item={item} onChangeValue={onChangeValue} />
+        ))}
       </DropdownList>
     </DropdownButton>
   );

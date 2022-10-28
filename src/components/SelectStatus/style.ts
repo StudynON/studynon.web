@@ -1,21 +1,5 @@
 import styled from "styled-components";
 
-export const ItemDropDown = styled.a`
-  display: block;
-  text-decoration: none;
-  text-align: left;
-
-  color: #474747;
-
-  padding: 6px 0px;
-
-  font-size: 0.8em;
-  font-weight: 600;
-
-  &:hover {
-    color: #0007ae;
-  }
-`;
 export const ButtonText = styled.span`
   padding: 10px;
   color: #0007ae;
