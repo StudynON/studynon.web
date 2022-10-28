@@ -1,7 +1,7 @@
-<h1> Owlrangenotes Front-end </h1>
-<p align="center">
-<img src= "https://img.shields.io/badge/STATUS-EM%20%20ANDAMENTO-blue" />
-</p>
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://opensource.org/licenses/)
+
+# Owlrange Front-End 🖥️
+
 
 ## Sumário
 - (Sobre nosso Projeto)[https://github.com/owlrangenotes/owlrangenotes-frontend#sobre-nosso-projeto]
