@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Modal from "../../components/Modal/Modal";
+import Modal from "../../components/Modal";
 import { Wrapper } from "./style";
 
 const ModalPage = () => {
@@ -15,8 +15,8 @@ const ModalPage = () => {
         btnAddText="Adicionar nova meta"
         btnReturnText="Retornar ao Cronograma"
         active={active}
-        linkToAddNew='/modalpage'
-        linkToReturn='/'
+        linkToAddNew="/modalpage"
+        linkToReturn="/"
       />
     </Wrapper>
   );

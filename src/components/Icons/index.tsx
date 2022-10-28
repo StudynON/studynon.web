@@ -17,3 +17,4 @@ export * from "./ArrowDownIcon";
 export * from "./At";
 export * from "./PersonCircle";
 export * from "./KeyFill";
+export * from "./LogoWithText";

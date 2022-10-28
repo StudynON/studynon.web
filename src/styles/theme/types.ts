@@ -17,11 +17,14 @@ export type IDefaultThemeProps = {
   blue: string;
   darkBlue: string;
   orange: string;
+  whiteSmoke: string;
+  darkKettle: string;
 };
 
 export type ICustomThemeProps = {
   text: string;
   background: string;
+  pageBackground: string;
 };
 
 export type IThemeProps = IDefaultThemeProps & ICustomThemeProps & IBreakpoints;
