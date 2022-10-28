@@ -4,10 +4,10 @@
 
 
 ## Sumário
-- (Sobre nosso Projeto)[https://github.com/owlrangenotes/owlrangenotes-frontend#sobre-nosso-projeto]
-- (Tecnologias que usamos)[https://github.com/owlrangenotes/owlrangenotes-frontend#tecnologias-que-usamos]
-- (Dúvidas)[https://github.com/owlrangenotes/owlrangenotes-frontend#dúvidas]
-- (Rodando localmente)[https://github.com/owlrangenotes/owlrangenotes-frontend#rodando-localmente]
+- [Sobre nosso Projeto](https://github.com/owlrangenotes/owlrangenotes-frontend#sobre-nosso-projeto)
+- [Tecnologias que usamos](https://github.com/owlrangenotes/owlrangenotes-frontend#tecnologias-que-usamos)
+- [Dúvidas](https://github.com/owlrangenotes/owlrangenotes-frontend#dúvidas)
+- [Rodando localmente](https://github.com/owlrangenotes/owlrangenotes-frontend#rodando-localmente)
 
 ## Sobre nosso Projeto
 
