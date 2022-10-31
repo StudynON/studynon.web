@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FormEvent, useState, useRef } from "react";
+import { FormEvent, useState, useRef, useCallback } from "react";
 
 import { SForm, SDateContainer, SBtnContainer } from "./style";
 
@@ -25,41 +25,42 @@ const FormAddMaterial = () => {
 
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
-  const handleCheckbox = () => {
+  const handleCheckbox = useCallback(() => {
     setIsChecked((prev) => !prev);
-  };
+  }, [isChecked]);
 
-  const handleCancel = () => {
+  const handleCancel = useCallback(() => {
     formRef?.current?.reset();
-  };
+  }, [formRef]);
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = useCallback(
+    (e: FormEvent) => {
+      e.preventDefault();
 
-    const formData = new FormData(e.target as HTMLFormElement);
-    const data = Object.fromEntries(formData);
+      const formData = new FormData(e.target as HTMLFormElement);
+      const data = Object.fromEntries(formData);
 
-    if (!data.title) {
-      return;
-    }
-    // Método post, deixarei comentado
-    // substituir API pelo endpoint correto qdo estiver disponível
-    // try {
-    //   axios.post('API',{
-    //     media: ${data.media},
-    //     link: ${data.link},
-    //     title: ${data.title},
-    //     school: ${data.school},
-    //     deadline: ${data.deadline},
-    //     category: ${data.category},
-    //     lifetime_access: ${isChecked}
-    //   })
-    //   alert('Material adicionado com sucesso')
-    // } catch (error) {
-    //   alert(`Erro ao adicionar material - ${error}`)
-    // }
+      if (!data.title) {
+        return;
+      }
+      // Método post, deixarei comentado
+      // substituir API pelo endpoint correto qdo estiver disponível
+      // try {
+      //   axios.post('API',{
+      //     media: ${data.media},
+      //     link: ${data.link},
+      //     title: ${data.title},
+      //     school: ${data.school},
+      //     deadline: ${data.deadline},
+      //     category: ${data.category},
+      //     lifetime_access: ${isChecked}
+      //   })
+      //   alert('Material adicionado com sucesso')
+      // } catch (error) {
+      //   alert(`Erro ao adicionar material - ${error}`)
+      // }
 
-    console.log(`
+      console.log(`
       Dados do formulário:
         media: ${data.media}
         Link: ${data.link}
@@ -69,8 +70,10 @@ const FormAddMaterial = () => {
         category: ${data.category}
         lifetime_access: ${isChecked}
     `);
-    formRef?.current?.reset();
-  };
+      formRef?.current?.reset();
+    },
+    [formRef],
+  );
 
   return (
     <SForm ref={formRef} onSubmit={handleSubmit}>
