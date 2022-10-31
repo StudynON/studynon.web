@@ -19,6 +19,7 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "react/jsx-no-bind": "error",
     "react/react-in-jsx-scope": "off",
     "indent": [
       "error",
