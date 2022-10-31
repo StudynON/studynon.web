@@ -19,6 +19,8 @@ const globalColors: IDefaultThemeProps = {
   blue: "#040EFF",
   darkBlue: "#0007AE",
   orange: "#FF6B00",
+  whiteSmoke: "#F5F5F5",
+  darkKettle: "#474747",
 };
 
 export const ligthTheme: IThemeProps = {
@@ -27,6 +29,7 @@ export const ligthTheme: IThemeProps = {
 
   text: globalColors.dark,
   background: globalColors.white,
+  pageBackground: globalColors.whiteSmoke,
 };
 
 export const darkTheme: IThemeProps = {
@@ -35,4 +38,5 @@ export const darkTheme: IThemeProps = {
 
   text: globalColors.light,
   background: globalColors.dark,
+  pageBackground: globalColors.dark,
 };

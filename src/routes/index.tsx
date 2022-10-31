@@ -3,16 +3,23 @@ import Home from "../pages/Home";
 import ModalPage from "../pages/ModalPage";
 
 import Authentication from "../pages/Auth";
+import PrivateContainer from "../components/PrivateContainer";
 
 const Routers = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route element={<PrivateContainer />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/modalpage" element={<ModalPage />} />
+        </Route>
+
         <Route path="/login" element={<Authentication page="login" />} />
         <Route path="/register" element={<Authentication page="register" />} />
-        <Route path="/forget-password" element={<Authentication page="forget-password" />} />
-        <Route path="/modalpage" element={<ModalPage />} />
+        <Route
+          path="/forget-password"
+          element={<Authentication page="forget-password" />}
+        />
       </Routes>
     </Router>
   );

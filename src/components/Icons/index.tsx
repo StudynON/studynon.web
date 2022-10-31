@@ -18,3 +18,4 @@ export * from "./At";
 export * from "./PersonCircle";
 export * from "./KeyFill";
 export * from "./SelectArrowDownIcon";
+export * from "./LogoWithText";
