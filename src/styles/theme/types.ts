@@ -1,11 +1,24 @@
 export type IBreakpoints = {
   breakpoints: {
-    extraSmall: string;
-    small: string;
-    medium: string;
-    large: string;
-    extraLarge: string;
-    big: string;
+    mobileS: string;
+    mobileM: string;
+    mobileL: string;
+    tablet: string;
+    laptop: string;
+    desktop: string;
+    desktopL: string;
+  };
+};
+
+export type IDevices = {
+  devices: {
+    mobileS: string;
+    mobileM: string;
+    mobileL: string;
+    tablet: string;
+    laptop: string;
+    desktop: string;
+    desktopL: string;
   };
 };
 
@@ -27,4 +40,4 @@ export type ICustomThemeProps = {
   pageBackground: string;
 };
 
-export type IThemeProps = IDefaultThemeProps & ICustomThemeProps & IBreakpoints;
+export type IThemeProps = IDefaultThemeProps & ICustomThemeProps & IBreakpoints & IDevices;
