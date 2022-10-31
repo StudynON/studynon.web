@@ -4,6 +4,8 @@ export const SInputContainer = styled.div`
   font-family: "Roboto", sans-serif;
   color: #474747;
 
+  width: auto;
+
   margin-top: 2rem;
 
   display: flex;
