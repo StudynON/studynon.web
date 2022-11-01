@@ -8,9 +8,6 @@ export type IBreakpoints = {
     desktop: string;
     desktopL: string;
   };
-};
-
-export type IDevices = {
   devices: {
     mobileS: string;
     mobileM: string;
@@ -40,4 +37,4 @@ export type ICustomThemeProps = {
   pageBackground: string;
 };
 
-export type IThemeProps = IDefaultThemeProps & ICustomThemeProps & IBreakpoints & IDevices;
+export type IThemeProps = IDefaultThemeProps & ICustomThemeProps & IBreakpoints;
