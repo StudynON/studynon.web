@@ -6,7 +6,7 @@ interface IProps {
 }
 
 const Wrapper = styled.div`
-  margin: 4rem auto;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;

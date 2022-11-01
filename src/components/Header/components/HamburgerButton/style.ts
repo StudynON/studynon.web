@@ -38,7 +38,7 @@ const Button = styled.button`
     bottom: 0;
   }
 
-  @media (min-width: 720px) {
+  @media ${({ theme }: IButtonProps) => theme.devices.laptop} {
     display: none;
   }
 `;

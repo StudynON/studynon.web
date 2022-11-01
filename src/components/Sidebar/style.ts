@@ -9,9 +9,10 @@ const ContainerWidthAndHeight = css`
   max-width: 261px;
   width: 100%;
   height: calc(100vh - 73px);
+  display: none;
 
-  @media (max-width: 720px) {
-    display: none;
+  @media ${({theme}:SidebarProps) => theme.devices.laptop} {
+    display: block;
   }
 `;
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FormEvent, useState, useRef } from "react";
+import { FormEvent, useState, useRef, useCallback } from "react";
 
 import { SForm, SDateContainer, SBtnContainer } from "./style";
 
@@ -9,12 +9,10 @@ import Input from "./ui/Input/Input";
 import Select from "./ui/Select/Select";
 
 const FormAddMaterial = () => {
-  // Primeiro select com o tipo de material cadastrado
   const optionMedia = [
     { id: 1, value: "videoAula", text: "Vídeo Aula" },
     { id: 2, value: "link", text: "Link" },
   ];
-  // Mock data para as pastas
   const optCategories = [
     { id: 1, value: "direitoAdm", text: "Direito Administrativo" },
     { id: 2, value: "direitoConst", text: "Direito Constitucional" },
@@ -25,52 +23,44 @@ const FormAddMaterial = () => {
 
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
-  const handleCheckbox = () => {
+  const handleCheckbox = useCallback(() => {
     setIsChecked((prev) => !prev);
-  };
+  }, [isChecked]);
 
-  const handleCancel = () => {
+  const handleCancel = useCallback(() => {
     formRef?.current?.reset();
-  };
+  }, [formRef]);
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = useCallback(
+    (e: FormEvent) => {
+      e.preventDefault();
 
-    const formData = new FormData(e.target as HTMLFormElement);
-    const data = Object.fromEntries(formData);
+      const formData = new FormData(e.target as HTMLFormElement);
+      const data = Object.fromEntries(formData);
 
-    if (!data.title) {
-      return;
-    }
-    // Método post, deixarei comentado
-    // substituir API pelo endpoint correto qdo estiver disponível
-    // try {
-    //   axios.post('API',{
-    //     media: ${data.media},
-    //     link: ${data.link},
-    //     title: ${data.title},
-    //     school: ${data.school},
-    //     deadline: ${data.deadline},
-    //     category: ${data.category},
-    //     lifetime_access: ${isChecked}
-    //   })
-    //   alert('Material adicionado com sucesso')
-    // } catch (error) {
-    //   alert(`Erro ao adicionar material - ${error}`)
-    // }
+      if (!data.title) {
+        return;
+      }
 
-    console.log(`
-      Dados do formulário:
-        media: ${data.media}
-        Link: ${data.link}
-        title: ${data.title}
-        school: ${data.school}
-        deadline: ${data.deadline}
-        category: ${data.category}
-        lifetime_access: ${isChecked}
-    `);
-    formRef?.current?.reset();
-  };
+      try {
+        axios.post("API", {
+          media: data.media,
+          link: data.link,
+          title: data.title,
+          school: data.school,
+          deadline: data.deadline,
+          category: data.category,
+          lifetime_access: isChecked,
+        });
+        alert("Material adicionado com sucesso");
+      } catch (error) {
+        alert(`Erro ao adicionar material - ${error}`);
+      }
+
+      formRef?.current?.reset();
+    },
+    [formRef],
+  );
 
   return (
     <SForm ref={formRef} onSubmit={handleSubmit}>
