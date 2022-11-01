@@ -9,12 +9,10 @@ import Input from "./ui/Input/Input";
 import Select from "./ui/Select/Select";
 
 const FormAddMaterial = () => {
-  // Primeiro select com o tipo de material cadastrado
   const optionMedia = [
     { id: 1, value: "videoAula", text: "Vídeo Aula" },
     { id: 2, value: "link", text: "Link" },
   ];
-  // Mock data para as pastas
   const optCategories = [
     { id: 1, value: "direitoAdm", text: "Direito Administrativo" },
     { id: 2, value: "direitoConst", text: "Direito Constitucional" },
@@ -43,33 +41,22 @@ const FormAddMaterial = () => {
       if (!data.title) {
         return;
       }
-      // Método post, deixarei comentado
-      // substituir API pelo endpoint correto qdo estiver disponível
-      // try {
-      //   axios.post('API',{
-      //     media: ${data.media},
-      //     link: ${data.link},
-      //     title: ${data.title},
-      //     school: ${data.school},
-      //     deadline: ${data.deadline},
-      //     category: ${data.category},
-      //     lifetime_access: ${isChecked}
-      //   })
-      //   alert('Material adicionado com sucesso')
-      // } catch (error) {
-      //   alert(`Erro ao adicionar material - ${error}`)
-      // }
 
-      console.log(`
-      Dados do formulário:
-        media: ${data.media}
-        Link: ${data.link}
-        title: ${data.title}
-        school: ${data.school}
-        deadline: ${data.deadline}
-        category: ${data.category}
-        lifetime_access: ${isChecked}
-    `);
+      try {
+        axios.post("API", {
+          media: data.media,
+          link: data.link,
+          title: data.title,
+          school: data.school,
+          deadline: data.deadline,
+          category: data.category,
+          lifetime_access: isChecked,
+        });
+        alert("Material adicionado com sucesso");
+      } catch (error) {
+        alert(`Erro ao adicionar material - ${error}`);
+      }
+
       formRef?.current?.reset();
     },
     [formRef],
