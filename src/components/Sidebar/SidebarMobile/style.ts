@@ -26,7 +26,7 @@ const Container = styled.nav`
     right: 0;
   }
 
-  @media (min-width: 720px) {
+  @media ${({theme}:SidebarMobileProps) => theme.devices.laptop}{
     display: none;
   }
 `;
