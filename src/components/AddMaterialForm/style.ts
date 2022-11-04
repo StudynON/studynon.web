@@ -1,13 +1,22 @@
 import styled from "styled-components";
+import { IThemeProps } from "../../styles/theme";
+
+interface ITheme {
+  theme: IThemeProps;
+}
 
 export const SForm = styled.form`
   max-width: 50rem;
   min-width: 20rem;
   width: 100%;
 
-  margin: 2rem auto;
+  margin: 0 auto;
 
   padding: 1rem;
+
+  @media ${({ theme }: ITheme) => theme.devices.laptop} {
+    margin: 2rem auto;
+  }
 `;
 
 export const SDateContainer = styled.div`
@@ -19,7 +28,7 @@ export const SDateContainer = styled.div`
 `;
 
 export const SBtnContainer = styled.div`
-  margin-top: 5rem;
+  margin-top: 3rem;
 
   display: flex;
   justify-content: center;

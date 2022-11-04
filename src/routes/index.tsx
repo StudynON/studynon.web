@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import ModalPage from "../pages/ModalPage";
+import SandboxTest from "../pages/Sandbox";
 
 import Authentication from "../pages/Auth";
 import PrivateContainer from "../components/PrivateContainer";
@@ -11,7 +11,7 @@ const Routers = () => {
       <Routes>
         <Route element={<PrivateContainer />}>
           <Route path="/" element={<Home />} />
-          <Route path="/modalpage" element={<ModalPage />} />
+          <Route path="/sandbox" element={<SandboxTest />} />
         </Route>
 
         <Route path="/login" element={<Authentication page="login" />} />

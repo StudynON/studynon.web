@@ -1,11 +1,21 @@
 export type IBreakpoints = {
   breakpoints: {
-    extraSmall: string;
-    small: string;
-    medium: string;
-    large: string;
-    extraLarge: string;
-    big: string;
+    mobileS: string;
+    mobileM: string;
+    mobileL: string;
+    tablet: string;
+    laptop: string;
+    desktop: string;
+    desktopL: string;
+  };
+  devices: {
+    mobileS: string;
+    mobileM: string;
+    mobileL: string;
+    tablet: string;
+    laptop: string;
+    desktop: string;
+    desktopL: string;
   };
 };
 

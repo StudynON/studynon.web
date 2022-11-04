@@ -1,14 +1,28 @@
 import { IDefaultThemeProps, IBreakpoints, IThemeProps } from "./";
 
-const breakpoints: IBreakpoints = {
-  breakpoints: {
-    extraSmall: "368px",
-    small: "576px",
-    medium: "768px",
-    large: "998px",
-    extraLarge: "1200px",
-    big: "1400px",
-  },
+const breakpoints = {
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  desktop: "1440px",
+  desktopL: "2560px",
+};
+
+const devices = {
+  mobileS: `(min-width: ${breakpoints.mobileS})`,
+  mobileM: `(min-width: ${breakpoints.mobileM})`,
+  mobileL: `(min-width: ${breakpoints.mobileL})`,
+  tablet: `(min-width: ${breakpoints.tablet})`,
+  laptop: `(min-width: ${breakpoints.laptop})`,
+  desktop: `(min-width: ${breakpoints.desktop})`,
+  desktopL: `(min-width: ${breakpoints.desktopL})`,
+};
+
+const globalBreakpoints: IBreakpoints = {
+  breakpoints,
+  devices,
 };
 
 const globalColors: IDefaultThemeProps = {
@@ -24,7 +38,7 @@ const globalColors: IDefaultThemeProps = {
 };
 
 export const ligthTheme: IThemeProps = {
-  ...breakpoints,
+  ...globalBreakpoints,
   ...globalColors,
 
   text: globalColors.dark,
@@ -33,7 +47,7 @@ export const ligthTheme: IThemeProps = {
 };
 
 export const darkTheme: IThemeProps = {
-  ...breakpoints,
+  ...globalBreakpoints,
   ...globalColors,
 
   text: globalColors.light,
