@@ -35,11 +35,11 @@ export function MaterialItem(props: IMaterialItemProps) {
         <CheckIcon size="1.5rem" />
       </Styled.ToggleSelection>
 
-      <div>
+      <Styled.Media>
         {media === "video" && <VideoCamIcon size="1.5rem" />}
         {media === "link" && <ExternalLinkIcon size="1.5rem" />}
         {media === "file" && <PaperClipIcon size="1.5rem" />}
-      </div>
+      </Styled.Media>
 
       <Styled.Describe>
         <Styled.Title>
@@ -56,10 +56,9 @@ export function MaterialItem(props: IMaterialItemProps) {
           - {status ? "concluído" : "pendente"} -
         </Styled.Status>
 
-        {!status &&
-          <Styled.Deadline>
-            {deadline}
-          </Styled.Deadline>}
+        <Styled.Deadline>
+          {deadline}
+        </Styled.Deadline>
       </Styled.Details>
     </Styled.Item>
   );
