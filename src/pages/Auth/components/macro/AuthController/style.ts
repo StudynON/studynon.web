@@ -5,7 +5,7 @@ interface IProps {
   theme: IThemeProps;
 }
 
-const breakpointLarge = ({theme}: IProps) => theme.breakpoints.large;
+const breakpointLarge = ({theme}: IProps) => theme.breakpoints.laptop;
 
 export const Container = styled.div`
   display: flex;
