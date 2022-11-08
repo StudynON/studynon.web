@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { Item } from "./style";
 
 interface IItemDropDown {
@@ -6,7 +7,7 @@ interface IItemDropDown {
 }
 
 function ItemDropDown({ item, onChangeValue }: IItemDropDown) {
-  const handleOnClick = () => onChangeValue(item);
+  const handleOnClick = useCallback(() => onChangeValue(item), []);
 
   return (
     <Item key={item} onClick={handleOnClick}>
