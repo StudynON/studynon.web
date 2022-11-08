@@ -1,4 +1,4 @@
-import HomeCards from "../../components/HomeCards";
+import { HomeCards } from "../../components/HomeCards";
 import { ContainerHome, TitleHome } from "./style";
 
 const Home = () => {
