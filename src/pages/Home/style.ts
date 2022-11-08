@@ -7,12 +7,12 @@ interface IProps {
 }
 
 const ContainerHome = styled.div`
-  max-width: 1200px;
+  max-width: 75rem;
   min-width: 20.3125rem;
   width: 100%;
 
   margin: 3.75rem auto;
-  
+
   padding: 1rem;
 `;
 
