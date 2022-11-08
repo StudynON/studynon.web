@@ -1,41 +1,24 @@
-import { PlusIcon } from "../../components/Icons";
-import { Card, CardContainer } from "./style";
+import styled from "styled-components";
+import HomeCards from "../../components/HomeCards";
 
 const Home = () => {
-  
   return (
-    <CardContainer>
-      <Card>
-        <PlusIcon size="4rem" />
-        <h1>Adicionar Material</h1>
-        <p>
-          Adicione novos materiais de estudo e escolha em que pastas vão ficar
-        </p>
-      </Card>
-      <Card>
-        <PlusIcon size="4rem" />
-        <h1>Adicionar Material</h1>
-        <p>
-          Adicione novos materiais de estudo e escolha em que pastas vão ficar
-        </p>
-      </Card>
-      <Card>
-        <PlusIcon size="4rem" />
-        <h1>Adicionar Material</h1>
-        <p>
-          Adicione novos materiais de estudo e escolha em que pastas vão ficar
-        </p>
-      </Card>
-      <Card>
-        <PlusIcon size="4rem" />
-        <h1>Adicionar Material</h1>
-        <p>
-          Adicione novos materiais de estudo e escolha em que pastas vão ficar
-        </p>
-      </Card>
-
-    </CardContainer>
+    <Container>
+      <Title>O que você deseja fazer?</Title>
+      <HomeCards />
+    </Container>
   );
 };
 
 export default Home;
+
+const Container = styled.div`
+  max-width: 1154px;
+  margin: 3.75rem auto;
+`;
+
+const Title = styled.h1`
+  font-size: 2rem;
+  font-weight: 600;
+  color: ${(props) => props.theme.darkKettle};
+`;
