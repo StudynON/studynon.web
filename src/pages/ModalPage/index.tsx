@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Modal from "../../components/Modal";
 import { Wrapper } from "./style";
 
 const ModalPage = () => {
   const [active, setActive] = useState(false);
 
+  const handleModal = useCallback(() => setActive((curr) => !curr), []);
+
   return (
     <Wrapper>
-      <button onClick={() => setActive(true)}>Abrir Modal</button>
+      <button onClick={handleModal}>Abrir Modal</button>
 
       <Modal
         title="Meta adicionada com sucesso"

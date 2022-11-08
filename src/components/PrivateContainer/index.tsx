@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
@@ -8,13 +8,9 @@ import { Container, ContentSection, Main } from "./style";
 const PrivateContainer = () => {
   const [menuIsActive, setMenuIsActive] = useState(false);
 
-  const toggleToActive = () => {
-    setMenuIsActive(true);
-  };
+  const toggleToActive = useCallback(() => setMenuIsActive(true), []);
 
-  const toggleToDisabled = () => {
-    setMenuIsActive(false);
-  };
+  const toggleToDisabled = useCallback(() => setMenuIsActive(false), []);
 
   return (
     <Container>

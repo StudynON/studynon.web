@@ -1,5 +1,5 @@
-import axios from "axios";
-import { FormEvent, useState, useRef } from "react";
+//import axios from "axios";
+import { FormEvent, useState, useRef, useCallback } from "react";
 
 import { SForm, SDateContainer, SBtnContainer } from "./style";
 
@@ -25,15 +25,11 @@ const FormAddMaterial = () => {
 
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
-  const handleCheckbox = () => {
-    setIsChecked((prev) => !prev);
-  };
+  const handleCheckbox = useCallback(() => setIsChecked((prev) => !prev), []);
 
-  const handleCancel = () => {
-    formRef?.current?.reset();
-  };
+  const handleCancel = useCallback(() => formRef?.current?.reset(), []);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = useCallback((e: FormEvent) => {
     e.preventDefault();
 
     const formData = new FormData(e.target as HTMLFormElement);
@@ -70,7 +66,7 @@ const FormAddMaterial = () => {
         lifetime_access: ${isChecked}
     `);
     formRef?.current?.reset();
-  };
+  }, []);
 
   return (
     <SForm ref={formRef} onSubmit={handleSubmit}>
