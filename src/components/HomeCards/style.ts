@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 import { IThemeProps } from "../../styles/theme/";
@@ -55,6 +56,7 @@ const Card = styled.div`
     color: ${(props) => props.theme.gray};
     line-height: 1.1875rem;
   }
+  
   & svg {
     color: ${({ theme }: IProps) => theme.darkBlue};
   }
@@ -62,7 +64,7 @@ const Card = styled.div`
   &:hover {
     background-color: ${({ theme }: IProps) => theme.darkBlue};
     cursor: pointer;
-    
+
     p,
     h1,
     svg {
@@ -73,4 +75,9 @@ const Card = styled.div`
   }
 `;
 
-export { CardContainer, Card };
+const LinkCard = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
+
+export { CardContainer, Card, LinkCard };
