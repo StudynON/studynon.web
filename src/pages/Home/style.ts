@@ -6,67 +6,21 @@ interface IProps {
   theme: IThemeProps;
 }
 
-const CardContainer = styled.div`
+const ContainerHome = styled.div`
   max-width: 1154px;
-  width: 100%;
-
-  margin: 2rem auto;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-  justify-items: center;
-  gap: 1rem;
+  margin: 3.75rem auto;
 `;
 
-const Card = styled.div`
-  width: 14rem;
-  height: 20rem;
+const TitleHome = styled.h1`
+  font-size: clamp(1.5rem, 1.2733rem + 1.0076vw, 2rem);
+  font-weight: 600;
+  color: ${({ theme }: IProps) => theme.darkKettle};
 
-  text-align: center;
+  margin-left: 2rem;
 
-  padding: 2.25rem;
-
-  border-radius: 1.125rem;
-
-  background-color: ${({ theme }: IProps) => theme.white};
-
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-
-  transition: all 0.3s ease-in-out;
-
-  & h1 {
-    color: ${({ theme }: IProps) => theme.darkBlue};
-    text-transform: uppercase;
-    line-height: 1.25rem;
-    font-weight: 600;
-    font-size: 1.25rem;
-  }
-
-  & p {
-    color: ${(props) => props.theme.gray};
-    line-height: 1.1875rem;
-  }
-  & svg {
-    color: ${({ theme }: IProps) => theme.darkBlue};
-  }
-
-  &:hover {
-    background-color: ${({ theme }: IProps) => theme.darkBlue};
-    cursor: pointer;
-    p,
-    h1,
-    svg {
-      transition: all 0.3s ease-in-out;
-
-      color: white;
-    }
+  @media ${({ theme }: IProps) => theme.devices.desktop} {
+    margin: auto;
   }
 `;
 
-export { CardContainer, Card };
+export { ContainerHome, TitleHome };

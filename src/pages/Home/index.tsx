@@ -1,24 +1,13 @@
-import styled from "styled-components";
 import HomeCards from "../../components/HomeCards";
+import { ContainerHome, TitleHome } from "./style";
 
 const Home = () => {
   return (
-    <Container>
-      <Title>O que você deseja fazer?</Title>
+    <ContainerHome>
+      <TitleHome>O que você deseja fazer?</TitleHome>
       <HomeCards />
-    </Container>
+    </ContainerHome>
   );
 };
 
 export default Home;
-
-const Container = styled.div`
-  max-width: 1154px;
-  margin: 3.75rem auto;
-`;
-
-const Title = styled.h1`
-  font-size: 2rem;
-  font-weight: 600;
-  color: ${(props) => props.theme.darkKettle};
-`;
