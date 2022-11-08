@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { IThemeProps } from "../../styles/theme/";
 
@@ -7,77 +7,97 @@ interface IProps {
   theme: IThemeProps;
 }
 
-const CardContainer = styled.div`
+export const CardContainer = styled.div`
   width: 100%;
 
-  margin-top: 3rem;
+  margin-top: 2rem;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-  justify-items: center;
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
 `;
 
-const transition = css`
-  transition: all 0.3s ease-in-out;
+export const LinkCard = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `;
 
-const Card = styled.div`
-  width: 14rem;
-  height: 20rem;
-
-  text-align: center;
-
-  padding: 2.25rem;
-
-  border-radius: 1.125rem;
+export const Card = styled.div`
+  width: 71px;
+  height: 98px;
 
   background-color: ${({ theme }: IProps) => theme.white};
+
+  color: white;
+
+  padding: 0.5rem;
+
+  border-radius: 5px;
 
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.625rem;
 
-  ${transition}
-
-  & h1 {
-    color: ${({ theme }: IProps) => theme.darkBlue};
-    text-transform: uppercase;
-    line-height: 1.25rem;
-    font-weight: 600;
-    font-size: 1.25rem;
-  }
-
-  & p {
-    color: ${(props) => props.theme.gray};
-    line-height: 1.1875rem;
-  }
-  
-  & svg {
+  svg {
+    width: 2.5rem;
+    height: 2.5rem;
     color: ${({ theme }: IProps) => theme.darkBlue};
   }
 
-  &:hover {
+  transition: all 0.3s ease-in-out;
+
+  :hover {
     background-color: ${({ theme }: IProps) => theme.darkBlue};
-    cursor: pointer;
 
-    p,
     h1,
+    p,
     svg {
-      ${transition}
-
-      color: white;
+      color: ${({ theme }: IProps) => theme.white};
     }
   }
+
+  @media ${({ theme }: IProps) => theme.devices.mobileL} {
+    width: 8.75rem;
+    height: 12.25rem;
+
+    svg {
+      width: 4.375rem;
+      height: 4.375rem;
+    }
+  }
+
+  @media ${({ theme }: IProps) => theme.devices.tablet} {
+    width: 11.75rem;
+    height: 17.5rem;
+
+    border-radius: 1.25rem;
+  }
 `;
 
-const LinkCard = styled(Link)`
-  text-decoration: none;
-  color: inherit;
+export const CardTitle = styled.h1`
+  font-size: clamp(0.625rem, 0.3571rem + 1.1905vw, 1.25rem);
+  text-align: center;
+  color: ${({ theme }: IProps) => theme.darkBlue};
+  text-transform: uppercase;
+  font-weight: 600;
+
+  transition: all 0.3s ease-in-out;
 `;
 
-export { CardContainer, Card, LinkCard };
+export const CardDescription = styled.p`
+  color: ${({ theme }: IProps) => theme.gray};
+  text-align: center;
+
+  display: none;
+
+  transition: all 0.3s ease-in-out;
+
+  @media ${({ theme }: IProps) => theme.devices.tablet} {
+    display: block;
+  }
+`;

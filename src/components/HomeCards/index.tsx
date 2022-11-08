@@ -1,6 +1,12 @@
 import { ReactNode } from "react";
 import { CalendarIcon, ListIcon, PlusIcon, TargetArrowIcon } from "../Icons";
-import { Card, CardContainer, LinkCard } from "./style";
+import {
+  Card,
+  CardContainer,
+  CardDescription,
+  CardTitle,
+  LinkCard,
+} from "./style";
 
 interface ILinksHome {
   icon: ReactNode;
@@ -12,27 +18,27 @@ interface ILinksHome {
 const HomeCards = () => {
   const linksList: ILinksHome[] = [
     {
-      icon: <PlusIcon size="4rem" />,
+      icon: <PlusIcon />,
       to: "/",
       title: "Adicionar Material",
       description:
         "Adicione novos materiais de estudo e escolha em que pastas vão ficar",
     },
     {
-      icon: <ListIcon size="4rem" />,
+      icon: <ListIcon />,
       to: "/",
       title: "Acessar Materiais",
       description:
         "Veja e edite todos os materiais de estudo adicionados em sua conta",
     },
     {
-      icon: <TargetArrowIcon size="4rem" />,
+      icon: <TargetArrowIcon />,
       to: "/",
       title: "Definir Metas",
       description: "Adicione novas metas ao seu cronograma de estudos",
     },
     {
-      icon: <CalendarIcon size="4rem" />,
+      icon: <CalendarIcon />,
       to: "/",
       title: "Ver todas as metas",
       description:
@@ -46,8 +52,8 @@ const HomeCards = () => {
           <LinkCard to={to} key={title}>
             <Card>
               {icon}
-              <h1>{title}</h1>
-              <p>{description}</p>
+              <CardTitle>{title}</CardTitle>
+              <CardDescription>{description}</CardDescription>
             </Card>
           </LinkCard>
         ))}
@@ -56,4 +62,4 @@ const HomeCards = () => {
   );
 };
 
-export {HomeCards};
+export { HomeCards };
