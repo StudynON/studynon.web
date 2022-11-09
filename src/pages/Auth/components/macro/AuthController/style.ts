@@ -48,7 +48,7 @@ export const ColumnRight = styled(Column)`
     rgba(37, 145, 251, 0.98) 0.1%,
     rgba(0, 7, 128, 1) 99.8%
   );
-  transition: background-image .3s ease;
+  transition: background-image 0.3s ease;
 
   @media (max-width: ${breakpointLarge}) {
     display: none;
