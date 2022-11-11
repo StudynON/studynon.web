@@ -17,7 +17,7 @@ const Container = styled.nav`
   display: block;
   width: 0px;
   z-index: 0;
-  transition: width 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
   overflow: hidden;
 
   &.active {
@@ -26,7 +26,7 @@ const Container = styled.nav`
     right: 0;
   }
 
-  @media (min-width: 720px) {
+  @media ${({theme}:SidebarMobileProps) => theme.devices.laptop}{
     display: none;
   }
 `;
