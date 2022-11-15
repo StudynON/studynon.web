@@ -21,6 +21,7 @@ export const Progress = styled.div`
   text-transform: ${props.textTransform};
   font-size: ${props.contentSize};
   color: ${props.contentColor};
+  user-select: none;
 
   &::before,
   &::after {
