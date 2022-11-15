@@ -54,7 +54,7 @@ export const Describe = styled.div`
 
 export const Title = styled.div`
   margin-bottom: .25rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
 `;
 
@@ -80,6 +80,7 @@ export const Deadline = styled.div`
   padding: 0.25rem 1rem;
   font-size: small;
   text-transform: lowercase;
+  white-space: nowrap;
   color: ${white};
   border-radius: 20px;
   background-color: ${blue};
