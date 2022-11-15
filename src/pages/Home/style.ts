@@ -6,14 +6,20 @@ interface IProps {
   theme: IThemeProps;
 }
 
-const Container = styled.div``;
+const ContainerHome = styled.div`
+  max-width: 75rem;
+  min-width: 20.3125rem;
+  width: 100%;
 
-/**
- * Usando a interface você pode ver as propriedades disponíveis em "theme"
- * theme: { breakpoints, text, background, white, light, dark, gray, blue, orange}
- */
-const Text = styled.h1`
-  color: ${({ theme }: IProps) => theme.text};
+  margin: 3.75rem auto;
+
+  padding: 1rem;
 `;
 
-export { Container, Text };
+const TitleHome = styled.h1`
+  font-size: clamp(1.5rem, 1.2733rem + 1.0076vw, 2rem);
+  font-weight: 600;
+  color: ${({ theme }: IProps) => theme.darkKettle};
+`;
+
+export { ContainerHome, TitleHome };
