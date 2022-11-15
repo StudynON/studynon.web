@@ -47,10 +47,6 @@ export const Input = styled.input`
   }
 `;
 
-export const ToggleSelection = styled.div``;
-
-export const Media = styled.div``;
-
 export const Describe = styled.div`
   width: 54%;
   text-transform: capitalize;

@@ -23,7 +23,7 @@ export function MaterialItem(props: IMaterialItemProps) {
 
   return (
     <Styled.Item htmlFor={inputId}>
-      <Styled.ToggleSelection>
+      <div>
         <Styled.Input
           id={inputId}
           type={"checkbox"}
@@ -33,13 +33,13 @@ export function MaterialItem(props: IMaterialItemProps) {
 
         <PlusIcon size="1.5rem" />
         <CheckIcon size="1.5rem" />
-      </Styled.ToggleSelection>
+      </div>
 
-      <Styled.Media>
+      <div>
         {media === "video" && <VideoCamIcon size="1.5rem" />}
         {media === "link" && <ExternalLinkIcon size="1.5rem" />}
         {media === "file" && <PaperClipIcon size="1.5rem" />}
-      </Styled.Media>
+      </div>
 
       <Styled.Describe>
         <Styled.Title>
