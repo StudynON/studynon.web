@@ -1,5 +1,7 @@
 import * as Styled from "./style";
 
+import { IMaterialItemProps } from "./interfaces";
+
 import {
   PlusIcon,
   CheckIcon,
@@ -7,15 +9,6 @@ import {
   ExternalLinkIcon,
   PaperClipIcon,
 } from "../../Icons/";
-
-interface IMaterialItemProps {
-  status: boolean;
-  id: number;
-  media: string;
-  title: string;
-  school: string;
-  deadline: string;
-}
 
 export function MaterialItem(props: IMaterialItemProps) {
   const { status, id, media, title, school, deadline } = props;

@@ -48,7 +48,8 @@ export const Input = styled.input`
 `;
 
 export const Describe = styled.div`
-  width: 54%;
+  max-width: 60%;
+  width: 100%;
   text-transform: capitalize;
 `;
 
@@ -78,6 +79,7 @@ export const Status = styled.div`
 
 export const Deadline = styled.div`
   padding: 0.25rem 1rem;
+  width: 140px;
   font-size: small;
   text-transform: lowercase;
   white-space: nowrap;
