@@ -29,6 +29,7 @@ export type IDefaultThemeProps = {
   orange: string;
   whiteSmoke: string;
   darkKettle: string;
+  lightGray: string;
 };
 
 export type ICustomThemeProps = {
