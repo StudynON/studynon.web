@@ -1,32 +1,6 @@
 import styled from "styled-components";
 
-import { IProgressProps } from "./interfaces";
-
-const defaultProps: IProgressProps = {
-  progress: 0,
-  size: "120px",
-  barWidth: "15%",
-  barColor: "#0007AE",
-  barCoverColor: "#74747480",
-  textTransform: "capitalize",
-  contentColor: "#0007AE",
-  contentSize: "1rem",
-  describeColor: "#747474",
-  describeSize: "1rem",
-  backgroundColor: "#FFFFFF",
-};
-
-const progress = ({ progress }: IProgressProps) => progress || defaultProps.progress;
-const size = ({ size }: IProgressProps) => size || defaultProps.size;
-const barWidth = ({ barWidth }: IProgressProps) => barWidth || defaultProps.barWidth;
-const barColor = ({ barColor }: IProgressProps) => barColor || defaultProps.barColor;
-const barCoverColor = ({ barCoverColor }: IProgressProps) => barCoverColor || defaultProps.barCoverColor;
-const textTransform = ({ textTransform }: IProgressProps) => textTransform || defaultProps.textTransform;
-const contentColor = ({ contentColor }: IProgressProps) => contentColor || defaultProps.contentColor;
-const contentSize = ({ contentSize }: IProgressProps) => contentSize || defaultProps.contentSize;
-const describeColor = ({ describeColor }: IProgressProps) => describeColor || defaultProps.describeColor;
-const describeSize = ({ describeSize }: IProgressProps) => describeSize || defaultProps.describeSize;
-const backgroundColor = ({ backgroundColor }: IProgressProps) => backgroundColor || defaultProps.backgroundColor;
+import * as props from "./props";
 
 export const Progress = styled.div`
   display: flex;
@@ -37,19 +11,20 @@ export const Progress = styled.div`
   overflow: hidden;
 
   position: relative;
+  z-index: 1;
   max-width: 100%;
   max-height: 100%;
-  width: ${size};
-  height: ${size};
+  width: ${props.size};
+  height: ${props.size};
   border-radius: 50%;
 
-  text-transform: ${textTransform};
-  font-size: ${contentSize};
-  color: ${contentColor};
+  text-transform: ${props.textTransform};
+  font-size: ${props.contentSize};
+  color: ${props.contentColor};
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     border-radius: 50%;
     z-index: -1;
@@ -58,19 +33,19 @@ export const Progress = styled.div`
   &::before {
     width: 100%;
     height: 100%;
-    background-color: ${barCoverColor};
+    background-color: ${props.barCoverColor};
     background: conic-gradient(
-      ${barColor} ${progress}%,
-      ${barCoverColor} 0%,
-      ${barCoverColor} 100%
+      ${props.barColor} ${props.progress}%,
+      ${props.barCoverColor} 0%,
+      ${props.barCoverColor} 100%
     );
   }
 
   &::after {
-    --bar-width: calc(100% - ${barWidth});
+    --bar-width: calc(100% - ${props.barWidth});
     width: var(--bar-width);
     height: var(--bar-width);
-    background-color: ${backgroundColor};
+    background-color: ${props.backgroundColor};
   }
 `;
 
@@ -78,8 +53,8 @@ export const Describe = styled.div`
   width: 100%;
   height: min-content;
   text-align: center;
-  color: ${describeColor};
-  font-size: ${describeSize};
-  padding-left: ${barWidth};
-  padding-right: ${barWidth};
+  color: ${props.describeColor};
+  font-size: ${props.describeSize};
+  padding-left: ${props.barWidth};
+  padding-right: ${props.barWidth};
 `;

@@ -1,10 +1,15 @@
 import React from "react";
+import { IThemeProps } from "../../../styles/theme";
 
 interface IChildren {
   children?: React.ReactNode;
 }
 
-export interface IProgressProps extends IChildren {
+interface ITheme {
+  theme?: IThemeProps;
+}
+
+export interface IProgressProps extends IChildren, ITheme {
   progress?: number;
   describe?: string;
   size?: string;
