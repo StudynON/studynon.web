@@ -65,6 +65,5 @@ export const Arrow = styled.div`
 
 export const Body = styled.div`
   display: ${bodyDisplay};
-
-  padding: 1rem 2rem;
+  padding: 1rem;
 `;
