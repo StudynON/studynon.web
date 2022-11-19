@@ -1,6 +1,6 @@
 import { IMaterialItemProps } from "../materialListItem/interfaces";
 
-export interface IDropdownFolderProps {
+export interface IDropdownProps {
   title: string;
   description: string;
   color: string;

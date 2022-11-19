@@ -8,7 +8,7 @@ import {
   VideoCamIcon,
   ExternalLinkIcon,
   PaperClipIcon,
-} from "../../Icons/";
+} from "../../Icons";
 
 export function MaterialItem(props: IMaterialItemProps) {
   const { status, id, media, title, school, deadline } = props;

@@ -1,13 +1,13 @@
 import { useCallback, useState } from "react";
 
 import * as Styled from "./style";
-import { IDropdownFolderProps } from "./interfaces";
+import { IDropdownProps } from "./interfaces";
 import { IMaterialItemProps } from "../materialListItem/interfaces";
 
 import { ArrowDownIcon } from "../../Icons";
-import { CircleProgress, MaterialItem } from "../";
+import { CircleProgress, MaterialItem } from "..";
 
-export function DropdownFolder({ title, description, color, progress, materials }: IDropdownFolderProps): JSX.Element {
+export function Dropdown({ title, description, color, progress, materials }: IDropdownProps): JSX.Element {
   const [droped, setDroped] = useState(false);
 
   const toggleVisibility = (): void => setDroped(!droped);
