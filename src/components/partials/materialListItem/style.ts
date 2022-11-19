@@ -48,7 +48,6 @@ export const Input = styled.input`
 `;
 
 export const Describe = styled.div`
-  max-width: 60%;
   width: 100%;
   text-transform: capitalize;
 `;
