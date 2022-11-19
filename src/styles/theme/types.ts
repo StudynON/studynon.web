@@ -1,26 +1,19 @@
+type IDevices = {
+    mobileS: string;
+    mobileM: string;
+    mobileL: string;
+    tablet: string;
+    laptop: string;
+    desktop: string;
+    desktopL: string;
+};
+
 export type IBreakpoints = {
-  breakpoints: {
-    mobileS: string;
-    mobileM: string;
-    mobileL: string;
-    tablet: string;
-    laptop: string;
-    desktop: string;
-    desktopL: string;
-  };
-  devices: {
-    mobileS: string;
-    mobileM: string;
-    mobileL: string;
-    tablet: string;
-    laptop: string;
-    desktop: string;
-    desktopL: string;
-  };
+  breakpoints: IDevices;
+  devices: IDevices;
 };
 
 export type IDefaultThemeProps = {
-  [key: string]: string;
   white: string;
   light: string;
   dark: string;
@@ -39,4 +32,8 @@ export type ICustomThemeProps = {
   pageBackground: string;
 };
 
-export type IThemeProps = IDefaultThemeProps & ICustomThemeProps & IBreakpoints;
+type IDynamicAccess = {
+  [key: string]: string | IDevices;
+}
+
+export type IThemeProps = IDynamicAccess & IDefaultThemeProps & ICustomThemeProps & IBreakpoints;
