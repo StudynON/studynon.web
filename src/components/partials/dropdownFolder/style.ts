@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { IDefaultThemeProps } from "../../../styles/theme";
+import { IThemeProps } from "../../../styles/theme";
 
 interface IActionProps {
   drop: boolean;
 }
 
-interface ITheme {
+interface IDropdownProps {
   folderColor?: string;
-  theme?: IDefaultThemeProps;
+  theme?: IThemeProps;
 }
 
 const rotate = ({ drop }: IActionProps) => {
@@ -20,11 +20,11 @@ const bodyDisplay = ({ drop }: IActionProps) => {
   return "none";
 };
 
-const folderColor = ({ folderColor = "blue", theme }: ITheme) => {
+const folderColor = ({ folderColor = "blue", theme }: IDropdownProps) => {
   return theme && (theme[folderColor] ?? theme.blue);
 };
-const gray = ({ theme }: ITheme) => theme?.gray;
-const white = ({ theme }: ITheme) => theme?.white;
+const gray = ({ theme }: IDropdownProps) => theme?.gray;
+const white = ({ theme }: IDropdownProps) => theme?.white;
 
 export const Dropdown = styled.div`
   margin: 1rem 0;
