@@ -16,6 +16,10 @@ import {
   SubTitle,
 } from "./styles";
 
+function handleChangeValue() {
+  return;
+}
+
 const ProgressToday = () => {
   return (
     <FrameContainer>
@@ -47,6 +51,7 @@ const ProgressToday = () => {
                     <SelectStatus
                       data={["CONCLUÍDO", "PENDENTE"]}
                       value={material.status}
+                      onChangeValue={handleChangeValue}
                     />
                   </div>
                 </RowList>
