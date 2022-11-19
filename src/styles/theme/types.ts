@@ -20,6 +20,7 @@ export type IBreakpoints = {
 };
 
 export type IDefaultThemeProps = {
+  [key: string]: string;
   white: string;
   light: string;
   dark: string;
