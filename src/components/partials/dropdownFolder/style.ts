@@ -20,7 +20,9 @@ const bodyDisplay = ({ drop }: IActionProps) => {
   return "none";
 };
 
-const folderColor = ({ folderColor, theme }: ITheme) => folderColor || theme?.blue;
+const folderColor = ({ folderColor = "blue", theme }: ITheme) => {
+  return theme && (theme[folderColor] ?? theme.blue);
+};
 const gray = ({ theme }: ITheme) => theme?.gray;
 const white = ({ theme }: ITheme) => theme?.white;
 
