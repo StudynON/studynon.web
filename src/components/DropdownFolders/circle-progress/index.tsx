@@ -1,28 +1,41 @@
-import React from "react";
-
-import { IProgressProps } from "./interfaces";
 import { Progress, Describe } from "./styles";
+import type { IComponentProgressProps } from "./interfaces";
 
-export const CircleProgress = (props: IProgressProps) => {
+export const CircleProgress = ({
+  progress = 0,
+  size,
+  barWidth,
+  barColor,
+  barCoverColor,
+  textTransform,
+  contentColor,
+  contentSize,
+  backgroundColor,
+  describeColor,
+  describeSize,
+  describe,
+  children
+}: IComponentProgressProps) => {
   return (
     <Progress
-      progress={props.progress}
-      size={props.size}
-      barWidth={props.barWidth}
-      barColor={props.barColor}
-      barCoverColor={props.barCoverColor}
-      textTransform={props.textTransform}
-      contentColor={props.contentColor}
-      contentSize={props.contentSize}
-      backgroundColor={props.backgroundColor}
+      progress={progress}
+      size={size}
+      barWidth={barWidth}
+      barColor={barColor}
+      barCoverColor={barCoverColor}
+      textTransform={textTransform}
+      contentColor={contentColor}
+      contentSize={contentSize}
+      backgroundColor={backgroundColor}
     >
-      {props.progress}%
+      {progress}%
 
       <Describe
-        describeColor={props.describeColor}
-        describeSize={props.describeSize}
+        progress={0}
+        describeColor={describeColor}
+        describeSize={describeSize}
       >
-        {props.children || props.describe}
+        {children || describe}
       </Describe>
     </Progress>
   );

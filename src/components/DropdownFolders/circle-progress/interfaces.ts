@@ -1,4 +1,3 @@
-import React from "react";
 import type { IThemeProps } from "../../../styles/theme";
 
 interface IChildren {
@@ -9,9 +8,8 @@ interface ITheme {
   theme?: IThemeProps;
 }
 
-export interface IProgressProps extends IChildren, ITheme {
-  progress?: number;
-  describe?: string;
+interface IProgressProps {
+  progress: number;
   size?: string;
   barWidth?: string;
   barColor?: string;
@@ -19,7 +17,14 @@ export interface IProgressProps extends IChildren, ITheme {
   textTransform?: string;
   contentColor?: string;
   contentSize?: string;
-  describeColor?: string;
-  describeSize?: string;
   backgroundColor?: string;
 }
+
+interface IDescribeProps {
+  describe?: string;
+  describeSize?: string;
+  describeColor?: string;
+}
+
+export type IStyledProgressProps = IProgressProps & IDescribeProps & ITheme;
+export type IComponentProgressProps = IProgressProps & IDescribeProps & IChildren;

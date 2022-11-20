@@ -1,7 +1,6 @@
+import type { IStyledProgressProps } from "./interfaces";
 
-import { IProgressProps } from "./interfaces";
-
-const defaultProps: IProgressProps = {
+const defaultProgressProps: IStyledProgressProps = {
   progress: 0,
   size: "120px",
   barWidth: "15%",
@@ -10,51 +9,51 @@ const defaultProps: IProgressProps = {
   textTransform: "capitalize",
   contentColor: "#0007AE",
   contentSize: "1rem",
+  backgroundColor: "#FFFFFF",
   describeColor: "#747474",
   describeSize: "1rem",
-  backgroundColor: "#FFFFFF",
 };
 
-export const progress = ({ progress }: IProgressProps) => {
-  return progress || defaultProps.progress;
+export const progress = ({ progress }: IStyledProgressProps) => {
+  return progress || defaultProgressProps.progress;
 };
 
-export const size = ({ size }: IProgressProps) => {
-  return size || defaultProps.size;
+export const size = ({ size }: IStyledProgressProps) => {
+  return size || defaultProgressProps.size;
 };
 
-export const barWidth = ({ barWidth }: IProgressProps) => {
-  return barWidth || defaultProps.barWidth;
+export const barWidth = ({ barWidth }: IStyledProgressProps) => {
+  return barWidth || defaultProgressProps.barWidth;
 };
 
-export const barColor = ({ barColor, theme }: IProgressProps) => {
-  return barColor || theme?.darkBlue || defaultProps.barColor;
+export const barColor = ({ barColor, theme }: IStyledProgressProps) => {
+  return barColor || theme?.darkBlue || defaultProgressProps.barColor;
 };
 
-export const barCoverColor = ({ barCoverColor, theme }: IProgressProps) => {
-  return barCoverColor || theme?.lightGray || defaultProps.barCoverColor;
+export const barCoverColor = ({ barCoverColor, theme }: IStyledProgressProps) => {
+  return barCoverColor || theme?.lightGray || defaultProgressProps.barCoverColor;
 };
 
-export const textTransform = ({ textTransform }: IProgressProps) => {
-  return textTransform || defaultProps.textTransform;
+export const textTransform = ({ textTransform }: IStyledProgressProps) => {
+  return textTransform || defaultProgressProps.textTransform;
 };
 
-export const contentColor = ({ contentColor, theme }: IProgressProps) => {
-  return contentColor || theme?.darkBlue || defaultProps.contentColor;
+export const contentColor = ({ contentColor, theme }: IStyledProgressProps) => {
+  return contentColor || theme?.darkBlue || defaultProgressProps.contentColor;
 };
 
-export const contentSize = ({ contentSize }: IProgressProps) => {
-  return contentSize || defaultProps.contentSize;
+export const contentSize = ({ contentSize }: IStyledProgressProps) => {
+  return contentSize || defaultProgressProps.contentSize;
 };
 
-export const describeColor = ({ describeColor, theme }: IProgressProps) => {
-  return describeColor || theme?.gray || defaultProps.describeColor;
+export const describeColor = ({ describeColor, theme }: IStyledProgressProps) => {
+  return describeColor || theme?.gray || defaultProgressProps.describeColor;
 };
 
-export const describeSize = ({ describeSize }: IProgressProps) => {
-  return describeSize || defaultProps.describeSize;
+export const describeSize = ({ describeSize }: IStyledProgressProps) => {
+  return describeSize || defaultProgressProps.describeSize;
 };
 
-export const backgroundColor = ({ backgroundColor, theme }: IProgressProps) => {
-  return backgroundColor || theme?.white || defaultProps.backgroundColor;
+export const backgroundColor = ({ backgroundColor, theme }: IStyledProgressProps) => {
+  return backgroundColor || theme?.white || defaultProgressProps.backgroundColor;
 };
