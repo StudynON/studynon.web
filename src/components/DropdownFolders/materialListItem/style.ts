@@ -1,14 +1,10 @@
 import styled from "styled-components";
 
-import { IThemeProps } from "../../../styles/theme";
+import { IStyleProps } from "./interfaces";
 
-interface IMaterialItemStyledProps {
-  theme: IThemeProps;
-}
-
-const gray = ({theme}: IMaterialItemStyledProps) => theme.gray;
-const blue = ({theme}: IMaterialItemStyledProps) => theme.blue;
-const white = ({theme}: IMaterialItemStyledProps) => theme.white;
+const gray = ({theme}: IStyleProps) => theme.gray;
+const blue = ({theme}: IStyleProps) => theme.blue;
+const white = ({theme}: IStyleProps) => theme.white;
 
 export const Item = styled.label`
   display: flex;

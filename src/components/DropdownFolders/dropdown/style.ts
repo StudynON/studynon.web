@@ -1,17 +1,5 @@
 import styled from "styled-components";
-import type { IThemeProps } from "../../../styles/theme";
-
-interface ITheme {
-  theme?: IThemeProps;
-}
-
-interface IFolderProps extends ITheme {
-  folderColor: string;
-}
-
-interface IDropdownProps {
-  drop?: boolean;
-}
+import { ITheme, IFolderProps, IDropdownProps } from "./interfaces";
 
 const rotate = ({ drop }: IDropdownProps) => {
   if (drop) return "rotateZ(180deg)";

@@ -1,6 +1,6 @@
 import * as Styled from "./style";
 
-import { IMaterialItemProps } from "./interfaces";
+import { IComponentProps } from "./interfaces";
 
 import {
   PlusIcon,
@@ -10,7 +10,7 @@ import {
   PaperClipIcon,
 } from "../../Icons";
 
-export function MaterialItem(props: IMaterialItemProps) {
+export function MaterialItem(props: IComponentProps) {
   const { status, id, media, title, school, deadline } = props;
   const inputId = `checkbox-${id}`;
 
