@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { IThemeProps } from "../../../styles/theme";
+import type { IThemeProps } from "../../../styles/theme";
 
 interface IActionProps {
   drop: boolean;
