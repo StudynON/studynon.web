@@ -24,7 +24,7 @@ export const CustomLink = styled(Link)`
     color: ${darkKettle};
   }
 
-  &[href="/#unknow"],
+  &[href*="#unknow"],
   &[href=""] {
     pointer-events: none;
   }
