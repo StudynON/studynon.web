@@ -7,7 +7,7 @@ export const navigation = styled.nav`
   display: flex;
   row-gap: .5rem;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: 1rem;
   color: ${gray};
 `;
 
