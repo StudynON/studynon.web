@@ -9,7 +9,7 @@ const SandboxTest = () => {
       to: "#area-do-estudante",
       content: "area do estudante"
     },
-    "cronograma de metas"
+    "adicionar materiais"
   ];
 
   return (
