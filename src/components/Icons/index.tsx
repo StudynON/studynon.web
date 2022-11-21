@@ -20,3 +20,5 @@ export * from "./KeyFill";
 export * from "./SelectArrowDownIcon";
 export * from "./LogoWithText";
 export * from "./SelectArrowDownIcon";
+export * from "./ArrowPrevious";
+export * from "./ArrowRight";
