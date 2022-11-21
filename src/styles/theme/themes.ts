@@ -35,6 +35,7 @@ const globalColors: IDefaultThemeProps = {
   orange: "#FF6B00",
   whiteSmoke: "#F5F5F5",
   darkKettle: "#474747",
+  lightGray: "#74747480",
 };
 
 export const ligthTheme: IThemeProps = {
