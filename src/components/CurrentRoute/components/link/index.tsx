@@ -18,7 +18,7 @@ export function RouteLink({ data }: IRouteLinkProps): JSX.Element {
   let content: string;
 
   if (typeof data === "string") {
-    to = "#";
+    to = "#unknow";
     content = firstLetterToUpperCase(data);
   } else {
     to = data.to;
