@@ -1,12 +1,25 @@
 import FormAddMaterial from "../../components/AddMaterialForm";
 import { Wrapper } from "./style";
 
+import { CurrentRoute } from "../../components/CurrentRoute";
+
 const SandboxTest = () => {
+  const currentRoutesData = [
+    {
+      to: "#area-do-estudante",
+      content: "area do estudante"
+    },
+    "cronograma de metas"
+  ];
 
   return (
-    <Wrapper>
-      <FormAddMaterial />
-    </Wrapper>
+    <>
+      <CurrentRoute routes={currentRoutesData} />
+
+      <Wrapper>
+        <FormAddMaterial />
+      </Wrapper>
+    </>
   );
 };
 
